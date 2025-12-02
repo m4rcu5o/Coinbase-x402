@@ -1,60 +1,107 @@
-# x402 Video Paywall Demo
+# 🔐 x402 Payment Gateway Video Paywall Demo
 
-This project demonstrates how to implement a paywall for video content using the [x402 payment protocol](https://www.x402.org/). The web app allows users to pay a small amount of cryptocurrency (USDC) to access a paywalled video.
+A complete demonstration of how to implement a **crypto payment gateway** using the **x402 payment protocol**.  
+This project shows how to create a **video paywall** where users pay a small fee in **USDC** (on Base Sepolia or Base Mainnet) to unlock premium content.
 
-## Features
+Optimized for developers searching for:  
+**x402 payment gateway • x402 crypto payments • x402 paywall • USDC paywall • Web3 monetization**
 
-- Simple Express.js server with x402 payment middleware
-- Paywalled endpoint for accessing premium video content
-- Client-side implementation for making payments
-- Base Sepolia testnet integration for easy testing
+---
 
-## Prerequisites
+## 🚀 Features
 
-- Node.js (v22 or higher)
-- A EVM-compatible wallet with Base Sepolia USDC
+- ⚡ **x402 Payment Gateway Integration** with `x402-express` middleware  
+- 🔐 **Paywalled video endpoint** using crypto micro-payments  
+- 🧩 **Client-side payment initiation** for x402 flows  
+- 🧪 **Base Sepolia testnet support** for simple testing  
+- 🌐 Minimal Express server—easy to extend into SaaS, API, or Web3 product  
 
-## Getting Started
+---
 
-1. Clone this repository:
+## 📦 Prerequisites
 
-   ```bash
-     git clone https://github.com/g0drlc/Coinbase-x402.git
-   ```
+- **Node.js v22+**
+- **EVM wallet** with **USDC on Base Sepolia**
 
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
+---
 
-3. Rename `.env.local` to `.env` and add the following variables (remember to replace `WALLET_ADDRESS` with your actual wallet address you want to receive payments for)
+## 🛠 Getting Started
 
-   ```
-   WALLET_ADDRESS=your_ethereum_wallet_address
-   NODE_ENV=development
-   PORT=4021
-   ```
+### 1. Clone the repository
+```bash
+git clone https://github.com/m4rcu5o/Coinbase-x402.git
+```
 
-4. Get Base Sepolia USDC for testing:
-   - Visit https://faucet.circle.com/
-   - Select Base Sepolia in the network dropdown
-   - Request test USDC
+### 2. Install dependencies
+```bash
+npm install
+```
 
-5. Start the development server:
-   ```bash
-   npm run dev
-   ```
+### 3. Configure your `.env` file  
+Rename `.env.local` → `.env` and update:
 
-6. Open your browser and navigate to `http://localhost:4021`
+```
+WALLET_ADDRESS=your_ethereum_wallet_address
+NODE_ENV=development
+PORT=4021
+```
 
-## How It Works
+This wallet receives all x402 payments.
 
-1. The server uses the `x402-express` middleware to protect the `/authenticate` endpoint
-2. When a user tries to access the protected endpoint, they are required to make a payment
-3. After successful payment, the user is redirected to `/video-content`, where the premium video content is served
+### 4. Get Base Sepolia USDC  
+- Visit: https://faucet.circle.com/  
+- Select **Base Sepolia**  
+- Request test USDC  
 
-## Customizing
+### 5. Start the server
+```bash
+npm run dev
+```
 
-- To change the price of the video, modify the `price` parameter in `api/index.js`
-- To use a different video, update the video source in `public/video-content.html`
-- To deploy on Base mainnet, update the network configuration in `api/index.js` (you will need also need CDP API Keys and need to use a different Facilitator)
+### 6. Open your browser  
+```
+http://localhost:4021
+```
+
+---
+
+## 🔍 How the x402 Payment Gateway Works
+
+1. The server applies `x402-express` middleware to protect `/authenticate`  
+2. When a user accesses the protected route, x402 triggers a **crypto payment request**  
+3. User pays using USDC (via Base Sepolia or Base Mainnet)  
+4. After successful payment, they are redirected to `/video-content`  
+5. The paywalled video is now accessible
+
+This demo can be extended into:  
+- Paid courses  
+- Premium media platforms  
+- API monetization  
+- SaaS paywalls  
+- Micro-subscription systems  
+- Developer tools with per-request billing  
+
+---
+
+## 🎛 Customizing
+
+- **Change price:**  
+  Edit `price` in `api/index.js`
+
+- **Replace video:**  
+  Modify `public/video-content.html`
+
+- **Deploy on Base Mainnet:**  
+  Update network config in `api/index.js`  
+  → Requires CDP API keys  
+  → Requires mainnet-compatible Facilitator  
+
+---
+
+## 📞 Contact  
+For custom x402 gateway integrations or production-grade paywall systems:  
+**Telegram:** https://t.me/idioRusty
+
+---
+
+⭐ If this project helps you, please **Star** the repo!  
